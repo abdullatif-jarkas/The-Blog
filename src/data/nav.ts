@@ -12,15 +12,15 @@ export const navData : navData[] =
     [
        {
          text:"Blog",
-         path: "/blog/1",
+         path: "",
        },
        {
          text:"Projects",
-         path: "",
+         path: "project",
        },
        {
          text:"About",
-         path: "",
+         path: "about",
        },
        {
          text:"Newsletter",

@@ -8,22 +8,36 @@ import Newsletter from './pages/Newsletter/Newsletter.tsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import store from './redux/store/index.ts'
+import Auth from './pages/Auth/Auth.tsx'
+import Layout from './layout/Layout.tsx'
 
 const routes = createBrowserRouter(
   [
     {
       path: '/',
-      element: <Home/>
-    },
-    {
-      path: '/blog/:id',
-      element: <Blog/>
-    },
-    {
-      path: '/new',
-      element: <Newsletter/>
+      element: <Layout />,
+      children : 
+      [
+        {
+          path: '/',
+          element: <Home/>
+        },
+        {
+          path: '/blog/:id',
+          element: <Blog/>
+        },
+        {
+          path: '/new',
+          element: <Newsletter/>
+        },
+        {
+          path: '/auth/:formType',
+          element : <Auth/>,
+        }
+      ]
     }
-  ], { basename: '/Blog'}
+
+  ], { basename: '/The-Blog'}
 )
 
 
