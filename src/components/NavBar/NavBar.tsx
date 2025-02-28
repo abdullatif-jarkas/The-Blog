@@ -4,10 +4,10 @@ import SideBar from "../SideBar/SideBar";
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import AuthSide from "./AuthSide";
 
 interface userNav
 {
-    userName : string;
     navData : navData[]
 }
 interface navData
@@ -15,7 +15,7 @@ interface navData
     text: string;
     path: string;
 }
-export default function NavBar({userName , navData} : userNav) {
+export default function NavBar({navData} : userNav) {
   const [isMenuOpen,setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   useEffect(() => {
@@ -28,14 +28,15 @@ export default function NavBar({userName , navData} : userNav) {
   }, []);
   return (
     <nav      
-    className={`flex   lg:px-28 lg:py-30 px-5 py-5 justify-between items-center dark:text-white sticky top-0 transition-shadow ${
+    className={`flex fixed   lg:px-28  w-screen z-10 bg-white font-Inter  dark:bg-dark px-5 py-5 justify-between items-center dark:text-white  top-0 transition-shadow ${
       isScrolled ? "shadow-lg sha dark:shadow-slate-800	" : ""
     }`}>
-        <NavLink to={"/"}  className="font-semibold   text-lg  lg:text-xl leading-6 " >{userName}</NavLink>
+        <AuthSide/>
+        <NavLink to={"/"}  className="font-semibold   text-lg  lg:text-xl leading-6 " ></NavLink>
         {/* menu */}
         <div className=" items-center md:flex hidden	">
          {navData.map((e, i) => (
-          <NavLink className="mr-3.5 font-normal dark:first-of-type:border-b dark:first-of-type:border-t-white dark:pb-5-5 text-lg  lg:text-xl leading-6" key={i} to={e.path}>
+          <NavLink  className= { ({ isActive }) => isActive ? 'mr-3.5 font-normal border-b-2 border-gray-950 dark:border-white  dark:pb-5-5 text-lg  lg:text-xl leading-6' : "mr-3.5 font-normal  dark:pb-5-5 text-lg  lg:text-xl leading-6"} key={i} to={e.path}>
             {e.text}
           </NavLink>
         ))}
@@ -46,7 +47,7 @@ export default function NavBar({userName , navData} : userNav) {
           <FontAwesomeIcon icon={faBars} className="dark:text-withe text-2xl w-8" />
           </button>
         </div>
-        <SideBar userName={userName} isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/>
+        <SideBar  isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/>
     </nav>
   )
 }

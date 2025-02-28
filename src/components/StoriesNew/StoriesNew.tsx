@@ -1,3 +1,5 @@
+import Button from "../../ui/Button/Button";
+
 interface StoriesNew
 {
     pText: string;
@@ -20,9 +22,9 @@ export default function StoriesNew({pText ,title, Supporting , placInput , btn ,
         <div className="py-3 pl-4 pr-6 border rounded-lg dark:bg-white">
             <input className=" placeholder:text-Normal  placeholder:text-base placeholder:font-normal" type="email" placeholder={placInput} />
         </div>
-        <button className="py-3 w-[118px] text-white bg-violet-700 outline-none border-0 rounded-lg font-medium text-base px-5" type="submit">{btn}</button>
+        <Button text={btn} textColor="text-white bg-violet-700"/>
       </div>
-    <p className="font-normal text-sm sm:text-base text-Normal dark:text-dark-gray ">{Hint} <span className=" underline">{span}</span></p>
+        <p className="font-normal text-sm sm:text-base text-Normal dark:text-dark-gray ">{Hint} <span className=" underline">{span}</span></p>
       </form>
     </div>
   )
