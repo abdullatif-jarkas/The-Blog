@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { selectLatestArticles} from "../../redux/slice";
 import { Link,} from "react-router-dom";
 import { GoArrowUpRight } from "react-icons/go";
-import Title from "../Title/Title";
+import Title from "../../ui/Title/Title";
 
 
 

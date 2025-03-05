@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import { selectPaginatedArticles, setPage } from "../../redux/slice/slider";
 import { Link } from "react-router-dom";
-import Title from "../Title/Title";
+import Title from "../../ui/Title/Title";
 import { GoArrowUpRight } from "react-icons/go";
 import Pagination from "../Pagination/Pagination";
 

@@ -32,11 +32,13 @@ export default {
       fontSize:
       {
         "hero" : "243px",
+        "hero-lg" : '200px',
         "hero-md" : "160.8px"
       },
       lineHeight:
       {
         "hero" : "295px",
+        "hero-lg" : "260px",
         "hero-md" : "194.6px",
         "hero-sm" : "87.14px",
         "60" : "60px"
@@ -62,6 +64,12 @@ export default {
         "53" : "53.50%",
         "44" : "44.42%"
        },
+       screens: {
+        'tablet': '992px',
+        
+        'laptop': '1400px',
+
+      },
     },
   },
   plugins: [],
