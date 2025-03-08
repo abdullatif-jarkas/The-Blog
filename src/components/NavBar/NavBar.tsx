@@ -28,7 +28,7 @@ export default function NavBar({navData} : userNav) {
   }, []);
   return (
     <nav      
-    className={`flex fixed   lg:px-28  w-screen z-10 bg-white font-Inter  dark:bg-dark px-5 py-5 justify-between items-center dark:text-white  top-0 transition-shadow ${
+    className={`flex fixed   lg:px-28  w-screen z-20 bg-white font-Inter  dark:bg-dark px-5 py-5 justify-between items-center dark:text-white  top-0 transition-shadow ${
       isScrolled ? "shadow-lg sha dark:shadow-slate-800	" : ""
     }`}>
         <AuthSide/>
