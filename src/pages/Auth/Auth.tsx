@@ -2,6 +2,7 @@ import { useLocation } from "react-router-dom";
 import AuthDev from "../../components/AuthDev/AuthDev";
 import Form from "../../components/Form/Form";
 import { LoginInputs, SignupInputs } from "../../data/form";
+import ForgotPass from "../../components/ForgotPass/ForgotPass";
 
 export default function Auth() {
   const location = useLocation();
@@ -14,7 +15,7 @@ export default function Auth() {
       : location.pathname === '/auth/signUp' ?
       <Form title={'Sign Up'} data={SignupInputs} formType="signup" btn="Sign Up" googletext="Sign Up with Google" navto="Already have an account? Login"  to="/auth/login"/> 
       : 
-      ''
+      <ForgotPass/>
       }
       </div>
       <AuthDev text="sharing your stories."/>
