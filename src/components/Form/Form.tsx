@@ -44,7 +44,7 @@ export default function Form({title ,  data , btn ,formType ,navto , to , google
       {data.map((item, index) => (
       <Input 
           key={index}
-          type={item.name === 'password' ? (isPasswordVisible ? 'text' : 'password'): item.type}
+          type={item.name === 'password' || item.name === 'confirmPassword' ? (isPasswordVisible ? 'text' : 'password'): item.type}
           placeholder={item.placeholder}
           name={item.name}
           value={formData[item.name] || ""}
