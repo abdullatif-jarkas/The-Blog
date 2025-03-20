@@ -8,7 +8,7 @@ export default function Input({
   name,
   onClickIcon,
   onChangeInput,
-  value, // ✅ Added value prop
+  value,
 }: DataPropsInput) {
   const location = useLocation();
 
@@ -30,8 +30,8 @@ export default function Input({
               placeholder={placeholder}
               required
               name={name}
-              value={value} // ✅ Controlled Input
-              onChange={onChangeInput} // ✅ Update formData
+              value={value} 
+              onChange={onChangeInput} 
               className="w-full py-3 px-4 outline-violet-700 rounded-md mb-6 border"
             />
           </div>

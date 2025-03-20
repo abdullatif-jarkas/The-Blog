@@ -1,12 +1,14 @@
-export interface btn 
-{
-    text?: string;
+export interface BtnProps {
+    text: string; 
     Bg?: string;
     textColor?: string;
     onClick?: () => void;
     disabled?: boolean;
-    type?: "button" | "reset" | "submit" | undefined
-}
+    isLoading?: boolean; 
+    type?: "button" | "reset" | "submit";
+    className?: string; 
+  }
+  
 export interface divProps
 {
     text: string;
@@ -27,4 +29,4 @@ export interface DataPropsInput {
     onClickTextarea?:  (event: React.MouseEvent<HTMLTextAreaElement>) => void;
     onChangeInput?: (event: React.ChangeEvent<HTMLInputElement>) => void;
     value?: string | number;
-  }  
+}  
