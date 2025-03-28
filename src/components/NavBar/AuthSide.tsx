@@ -3,14 +3,18 @@ import { useSelector, useDispatch } from "react-redux";
 import { NavLink, Link } from "react-router-dom";
 import { RootState } from "../../redux/store";
 import { logout } from "../../redux/slice/authSlice";
+import { toast } from "sonner";
 
 export default function AuthSide() {
   const [activeButton, setActiveButton] = useState("login");
   const dispatch = useDispatch();
-  const { isAuthenticated, user } = useSelector((state: RootState) => state.auth);
+  const { isAuthenticated, user } = useSelector(
+    (state: RootState) => state.auth
+  );
 
   const handleLogout = () => {
     dispatch(logout());
+    toast.success("Logged out successfully!");
   };
 
   return (
@@ -21,7 +25,7 @@ export default function AuthSide() {
 
           {user?.isAdmin && (
             <Link
-              to="/admin/dashboard"
+              to="dashboard"
               className="mr-3.5 font-normal  dark:pb-5-5 text-lg  lg:text-xl leading-6"
             >
               Dashboard

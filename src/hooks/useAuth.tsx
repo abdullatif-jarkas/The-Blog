@@ -1,7 +1,7 @@
 import { useMutation } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import toast from "react-hot-toast";
+import { toast } from "sonner";
 import { loginUser, registerUser } from "../api/auth";
 import { loginSuccess } from "../redux/slice/authSlice";
 
@@ -58,7 +58,7 @@ export const useAuth = (
 
   return {
     handleSubmit,
-    isLoading: mutation.isPending, 
-    isError: mutation.isError, 
+    isLoading: mutation.isPending,
+    isError: mutation.isError,
   };
 };
